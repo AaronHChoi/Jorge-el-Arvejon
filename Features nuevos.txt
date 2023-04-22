@@ -1,6 +1,10 @@
+Version 3
+
+Wall Jump y Wall Sliding incorporados
+
 Version 2
 
-Dash y Trail con la tecla Control
+Dash con Trail con la tecla Control
 
 Version 1
 
