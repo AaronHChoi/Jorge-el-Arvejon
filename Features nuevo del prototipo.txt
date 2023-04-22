@@ -1,0 +1,15 @@
+Version 2
+
+Dash y Trail con la tecla Control
+
+Version 1
+
+Features nuevo del prototipo.
+
+- Correr con LShift
+- Salto mas alto si se holdea Space
+
+Extras para mejores vibras
+
+- Coyote Time: se puede saltar unos segundos depsues de dejar el suelo.
+- Jump Buffering: se puede poner el input de salto antes de tocar el suelo dejando que el jugador pueda sentir que los controles sean mas fluidos.
