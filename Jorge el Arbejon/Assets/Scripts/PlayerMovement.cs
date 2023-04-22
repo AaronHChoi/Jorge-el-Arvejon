@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float moveSpeed = walkSpeed;
 
-    private float jumpingPower = 20f;
+    private float jumpingPower = 15f;
     private bool isFacingRight = true;
 
     private float coyoteTime = 0.2f;
@@ -28,6 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isWallSliding;
     private float wallSlidingSpeed = 2f;
+
+    private bool isWallJumping;
+    private float wallJumpingDirection;
+    private float wallJumpingTime = 0.2f;
+    private float wallJumpingCounter;
+    private float wallJumpingDuration = 0.4f;
+    private Vector2 wallJumpingPower = new Vector2(10f, 15f);
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -81,7 +88,12 @@ public class PlayerMovement : MonoBehaviour
 
         WallSlide();
 
-        Flip();
+        WallJump();
+
+        if (!isWallJumping)
+        {
+            Flip();
+        }
 
         Run();
 
@@ -100,12 +112,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!isWallJumping)
+        {
+            rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+        }
+
         if (isDashing)
         {
             return;
         }
-
-        rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+       
     }
 
     private bool IsWalled()
@@ -124,6 +140,45 @@ public class PlayerMovement : MonoBehaviour
         {
             isWallSliding = false;
         }
+    }
+
+    private void WallJump()
+    {
+        if (isWallSliding)
+        {
+            isWallJumping = false;
+            wallJumpingDirection = -transform.localScale.x;
+            wallJumpingCounter = wallJumpingTime;
+
+            CancelInvoke(nameof(StopWallJumping));
+        }
+
+        else
+        {
+            wallJumpingCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
+        {
+            isWallJumping = true;
+            rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+            wallJumpingCounter = 0f;
+
+            if (transform.localScale.x != wallJumpingDirection)
+            {
+                isFacingRight = !isFacingRight;
+                Vector3 localScale = transform.localScale;
+                localScale.x *= -1f;
+                transform.localScale = localScale;
+            }
+
+            Invoke(nameof(StopWallJumping), wallJumpingDuration);
+        }
+    }
+
+    private void StopWallJumping()
+    {
+        isWallJumping = false;
     }
 
     private void Flip()
