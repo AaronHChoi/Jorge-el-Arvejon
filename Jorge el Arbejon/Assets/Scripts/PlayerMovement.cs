@@ -6,36 +6,37 @@ public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
 
-    private const float walkSpeed = 10f;
-    private  const float runSpeed = walkSpeed * 1.5f;
+    [SerializeField] private const float walkSpeed = 10f;
+    private const float runSpeed = walkSpeed * 1.5f;
 
     private float moveSpeed = walkSpeed;
 
-    private float jumpingPower = 15f;
+    [SerializeField] private float jumpingPower = 15f;
     private bool isFacingRight = true;
 
-    private float coyoteTime = 0.2f;
+    [SerializeField] private float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
 
-    private float jumpBufferTime = 0.2f;
+    [SerializeField] private float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
 
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 24f;
-    private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    [SerializeField] private float dashingPower = 24f;
+    [SerializeField] private float dashingTime = 0.2f;
+    [SerializeField] private float dashingCooldown = 1f;
 
     private bool isWallSliding;
-    private float wallSlidingSpeed = 2f;
+    [SerializeField] private float wallSlidingSpeed = 2f;
 
     private bool isWallJumping;
     private float wallJumpingDirection;
-    private float wallJumpingTime = 0.2f;
+    [SerializeField] private float wallJumpingTime = 0.2f;
     private float wallJumpingCounter;
-    private float wallJumpingDuration = 0.4f;
-    private Vector2 wallJumpingPower = new Vector2(10f, 15f);
+    [SerializeField] private float wallJumpingDuration = 0.1f;
 
+    [SerializeField] private Vector2 wallJumpingPower = new Vector2(2f, 15f);
+    
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;

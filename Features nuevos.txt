@@ -1,3 +1,7 @@
+Version 4
+
+Tweaks a parametros para que se sienta mejor la jugabilidad
+
 Version 3
 
 Wall Jump y Wall Sliding incorporados

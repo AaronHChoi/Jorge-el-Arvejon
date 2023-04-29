@@ -2318,6 +2318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa5fec185eae7645b8c78cd92d707c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallJumpingDuration: 0.4
+  wallJumpingPower: {x: 10, y: 15}
   rb: {fileID: 1661075983}
   groundCheck: {fileID: 1475983304}
   groundLayer:
