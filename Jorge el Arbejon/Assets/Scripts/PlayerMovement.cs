@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private const float walkSpeed = 10f;
     private const float runSpeed = walkSpeed * 1.5f;
-
     private float moveSpeed = walkSpeed;
 
     [SerializeField] private float jumpingPower = 15f;
@@ -28,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isWallSliding;
     [SerializeField] private float wallSlidingSpeed = 2f;
-
     private bool isWallJumping;
     private float wallJumpingDirection;
     [SerializeField] private float wallJumpingTime = 0.2f;
