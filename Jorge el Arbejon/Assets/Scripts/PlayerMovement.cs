@@ -108,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         UpdateAnimationState();
+
     }
 
     private bool IsGrounded()
@@ -119,16 +120,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isWallJumping)
-        {
-            rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
-        }
-
         if (isDashing)
         {
             return;
         }
-       
+
+        if (!isWallJumping)
+        {
+            rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+        }
     }
 
     private bool IsWalled()

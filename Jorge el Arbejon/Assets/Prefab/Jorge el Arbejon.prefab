@@ -169,7 +169,7 @@ MonoBehaviour:
   jumpingPower: 15
   coyoteTime: 0.2
   jumpBufferTime: 0.2
-  dashingPower: 24
+  dashingPower: 30
   dashingTime: 0.2
   dashingCooldown: 1
   wallSlidingSpeed: 2
@@ -228,7 +228,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.5
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -247,7 +247,7 @@ TrailRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0

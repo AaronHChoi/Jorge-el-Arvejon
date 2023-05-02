@@ -3717,10 +3717,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jorge el Arbejon
       objectReference: {fileID: 0}
-    - target: {fileID: 3715060774573589714, guid: cfb45ec69a49496468406e676a6d06d6, type: 3}
-      propertyPath: wallJumpingDuration
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 5721969824003509440, guid: cfb45ec69a49496468406e676a6d06d6, type: 3}
       propertyPath: m_RootOrder
       value: -1
