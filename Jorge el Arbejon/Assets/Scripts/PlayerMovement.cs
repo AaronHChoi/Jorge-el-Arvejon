@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
+
     private float horizontal;
 
     [SerializeField] private const float walkSpeed = 10f;
@@ -42,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
 
+    private enum MovementState { idle, running, jumping }
 
     // Update is called once per frame
     void Update()
@@ -53,9 +56,11 @@ public class PlayerMovement : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
+
         if (IsGrounded())
         {
             coyoteTimeCounter = coyoteTime;
+
         }
         else
         {
@@ -83,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
 
             coyoteTimeCounter = 0f;
+
         }
 
         WallSlide();
@@ -100,6 +106,8 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
+
+        UpdateAnimationState();
     }
 
     private bool IsGrounded()
@@ -228,5 +236,34 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(dashingCooldown);
 
             canDash = true;
+    }
+
+    private void UpdateAnimationState()
+    {
+        MovementState state;
+
+        if (horizontal > 0f)
+        {
+            state = MovementState.running;
+        }
+        else if (horizontal < 0f)
+        {
+            state = MovementState.running;
+        }
+        else
+        {
+            state = MovementState.idle;
+        }
+
+        if (rb.velocity.y > 0.1f)
+        {
+            state = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -0.1f)
+        {
+            state = MovementState.jumping;
+        }
+
+        animator.SetInteger("state", (int)state);
     }
 }
