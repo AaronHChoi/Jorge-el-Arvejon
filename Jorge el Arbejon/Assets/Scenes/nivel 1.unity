@@ -14305,6 +14305,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 994426323849529278, guid: f06ac442878b94948b63c8496effde19, type: 3}
+      propertyPath: orthographic size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4620044469820327479, guid: f06ac442878b94948b63c8496effde19, type: 3}
       propertyPath: m_Name
       value: Camera
@@ -14313,6 +14317,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 521729162}
+    - target: {fileID: 5575993281301150828, guid: f06ac442878b94948b63c8496effde19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.0182261
+      objectReference: {fileID: 0}
     - target: {fileID: 6534954051963554523, guid: f06ac442878b94948b63c8496effde19, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -14356,6 +14364,10 @@ PrefabInstance:
     - target: {fileID: 6534954051963554523, guid: f06ac442878b94948b63c8496effde19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023874612477662530, guid: f06ac442878b94948b63c8496effde19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.0182261
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
