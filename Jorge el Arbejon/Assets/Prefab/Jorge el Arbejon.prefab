@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1615960714783300457}
   - component: {fileID: 2578343869729068350}
   - component: {fileID: 3950124977500338351}
+  - component: {fileID: 5047366364600166664}
   m_Layer: 0
   m_Name: Jorge el Arbejon
   m_TagString: Player
@@ -37,8 +38,9 @@ Transform:
   m_Children:
   - {fileID: 7684455168040656203}
   - {fileID: 8178395699948047358}
+  - {fileID: 2699692500146629665}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9158793058440252459
 SpriteRenderer:
@@ -175,7 +177,7 @@ MonoBehaviour:
   dashingCooldown: 1
   wallSlidingSpeed: 2
   wallJumpingTime: 0.2
-  wallJumpingDuration: 0.2
+  wallJumpingDuration: 0.1
   wallJumpingPower: {x: 10, y: 15}
   rb: {fileID: 7990092339054664838}
   groundCheck: {fileID: 7684455168040656203}
@@ -333,6 +335,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5510d33dcbfd7e49b66c2ff774889ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lootText: {fileID: 0}
+--- !u!114 &5047366364600166664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391894208857442496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631045f578758754b8152181e48bc302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0.2
+  firepoint: {fileID: 2699692500146629665}
+  bullets: {fileID: 0}
+--- !u!1 &3402551534975693659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2699692500146629665}
+  m_Layer: 0
+  m_Name: firePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2699692500146629665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3402551534975693659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.51, y: -0.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5721969824003509440}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8500269154167455386
 GameObject:
   m_ObjectHideFlags: 0

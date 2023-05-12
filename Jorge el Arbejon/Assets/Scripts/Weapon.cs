@@ -4,18 +4,36 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public Transform firePoint;
-    public GameObject bulletPrefab;
-    void Update()
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private Transform firepoint;
+    [SerializeField] private GameObject bullets;
+
+
+    private PlayerMovement playerMovement;
+    private float cooldownTimer = Mathf.Infinity;
+
+    private void Awake()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Shoot();
-        }
+
+        playerMovement = GetComponent<PlayerMovement>();        
     }
 
-    void Shoot()
+    private void Update()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if (Input.GetButtonDown("Fire1") && cooldownTimer > attackCooldown)
+            Attack();
+
+        cooldownTimer += Time.deltaTime;
+
+    }
+
+    private void Attack()
+    {
+        cooldownTimer = 0;
+
+        bullets.transform.position = firepoint.position;
+        bullets.GetComponent<bullet>().SetDirection(Mathf.Sign(transform.localScale.x));
+
+
     }
 }
