@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,7 +105,469 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b837776c0752f5946834215f869aade8
+      internalID: -2122208871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 168
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc9f02bdacc6044ba49334e5ab7de5d
+      internalID: -2071995943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 168
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bbd0e031b9212459c4b953c94ad7d4
+      internalID: 116071022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 168
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ec1d9c7071e8d4fac594ce6ff412ab
+      internalID: -1790443623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 168
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf824afa169bff14d81f626c8a6b8954
+      internalID: 1057480423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 168
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4266acdd2c68cb4fb018da4a2c3fa7e
+      internalID: 1448352070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 168
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffcac97c4a7ddfe4b83950fd0c105c2b
+      internalID: 1554911392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15977232150d53b459c4320618798934
+      internalID: -1926238668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 170
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7bb267c02c593848ab9d228904fb3c3
+      internalID: 613058422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 137
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8a6b74449e3564bad884dcc4c6d832
+      internalID: -72957797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 140
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f7116624b6a2741be61348bb7fb557
+      internalID: 646837206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 143
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876eb43f0a0cfd94ab527ef196eaa411
+      internalID: 661942291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 120
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f3c9c5d81294c44b57ced5521a9e18
+      internalID: 291344952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 120
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71df410c7a844343aa0b06d45991dc5
+      internalID: 181338638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 120
+        width: 9
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53eee3cd14aec634aacbacd589edeb38
+      internalID: 1599257034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea303af9f4e131c41bd71eb58a5630b1
+      internalID: 912892364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 88
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a153e4a9cc8474fb5d89e3dee7ff8e
+      internalID: 544050573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 88
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f8b7a41f21de1449496d082295f2a4
+      internalID: 1879430587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 72
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5146aedc64b634ebf244937461e7e6
+      internalID: 1678635104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dfb33630bcac714790d4e988ae0c78b
+      internalID: 1352477894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce903f2b56d0acb4fbddf0f20a607cc4
+      internalID: 254437906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TILES_FONDO-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 49
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418e5588f2e2d8744881354f79f7d093
+      internalID: 528259640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +578,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TILES_FONDO-Sheet_0: -2122208871
+      TILES_FONDO-Sheet_1: -2071995943
+      TILES_FONDO-Sheet_10: 646837206
+      TILES_FONDO-Sheet_11: 661942291
+      TILES_FONDO-Sheet_12: 291344952
+      TILES_FONDO-Sheet_13: 181338638
+      TILES_FONDO-Sheet_14: 1599257034
+      TILES_FONDO-Sheet_15: 912892364
+      TILES_FONDO-Sheet_16: 544050573
+      TILES_FONDO-Sheet_17: 1879430587
+      TILES_FONDO-Sheet_18: 1678635104
+      TILES_FONDO-Sheet_19: 1352477894
+      TILES_FONDO-Sheet_2: 116071022
+      TILES_FONDO-Sheet_20: 254437906
+      TILES_FONDO-Sheet_21: 528259640
+      TILES_FONDO-Sheet_3: -1790443623
+      TILES_FONDO-Sheet_4: 1057480423
+      TILES_FONDO-Sheet_5: 1448352070
+      TILES_FONDO-Sheet_6: 1554911392
+      TILES_FONDO-Sheet_7: -1926238668
+      TILES_FONDO-Sheet_8: 613058422
+      TILES_FONDO-Sheet_9: -72957797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
