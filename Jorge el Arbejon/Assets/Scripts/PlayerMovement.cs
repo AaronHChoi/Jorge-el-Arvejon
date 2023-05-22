@@ -175,18 +175,21 @@ public class PlayerMovement : MonoBehaviour
             wallJumpingCounter -= Time.deltaTime;
         }
 
+        // aca fix wall jump por ahora esta bien pero no hace bien el wall jump para la derecha hay que cambiar el codigo que deje de usar
+        // scale x y usar rotate 180
+
         if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
         {
             isWallJumping = true;
+
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+
             wallJumpingCounter = 0f;
 
             if (transform.localScale.x != wallJumpingDirection)
             {
                 isFacingRight = !isFacingRight;
-                Vector3 localScale = transform.localScale;
-                localScale.x *= -1f;
-                transform.localScale = localScale;
+                transform.Rotate(0f, 180f, 0f);
             }
 
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
@@ -203,6 +206,8 @@ public class PlayerMovement : MonoBehaviour
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight =  !isFacingRight;
+
+
 
             transform.Rotate(0f, 180f, 0f);
             
@@ -222,6 +227,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    // aca cambiar que la direccion del dash valla por la direccion de que esta dando el pj y no por scale x
     private IEnumerator Dash()
     {
             canDash = false;
