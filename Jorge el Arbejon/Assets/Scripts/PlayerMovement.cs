@@ -8,9 +8,15 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontal;
 
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer; 
+    [SerializeField] private Rigidbody2D rb;
+
+    // movimiento lateral
     [SerializeField] private const float walkSpeed = 10f;
     private const float runSpeed = walkSpeed * 1.5f;
     private float moveSpeed = walkSpeed;
+    // movimiento vertical
 
     [SerializeField] private float jumpingPower = 15f;
     private bool isFacingRight = true;
@@ -21,11 +27,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
 
+    // dash
+    [SerializeField] private TrailRenderer tr;
+
     private bool canDash = true;
     private bool isDashing;
     [SerializeField] private float dashingPower = 24f;
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
+
+    // wall slide   y wall jump
+
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask wallLayer;
 
     private bool isWallSliding;
     [SerializeField] private float wallSlidingSpeed = 2f;
@@ -37,12 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Vector2 wallJumpingPower = new Vector2(2f, 15f);
     
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private TrailRenderer tr;
-    [SerializeField] private Transform wallCheck;
-    [SerializeField] private LayerMask wallLayer;
 
     private enum MovementState { idle, running, jumping }
 
@@ -149,6 +157,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    // ACA
     private void WallJump()
     {
         if (isWallSliding)
@@ -193,9 +203,8 @@ public class PlayerMovement : MonoBehaviour
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight =  !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+
+            transform.Rotate(0f, 180f, 0f);
             
         }
     }
