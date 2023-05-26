@@ -13,9 +13,12 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (!PauseMenu.isPaused)
         {
-            Shoot();
+            if (Input.GetButton("Fire1"))
+            {
+                Shoot();
+            }
         }
 
     }

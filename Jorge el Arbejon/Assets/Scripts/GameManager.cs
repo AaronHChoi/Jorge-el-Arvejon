@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    int totalPoints;
-    
-    void Start()
+    public static GameManager Instance { get; private set; }
+    public int TotalPoints {  get { return totalPoints; } }
+
+    private int totalPoints;
+
+    void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.Log("Hay mas de un gamemanager");
+        }
     }
 
-    
-    void Update()
+    public void AddPoints (int addPoints)
     {
-        
+        totalPoints += addPoints;
     }
 }
