@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830379808866801927}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.836922, y: 6.4627323, z: 6.9132895}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5451462961242951756}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5039641679234185977
 GameObject:
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5451462961242951756}
   - component: {fileID: 889743557478937385}
   - component: {fileID: 1573322467126024173}
+  - component: {fileID: 7212894050716318238}
   m_Layer: 0
   m_Name: Loot
   m_TagString: Loot
@@ -58,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039641679234185977}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.766922, y: -1.2227325, z: -6.9132895}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -211,5 +212,22 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2272214379865414085, guid: c70eb9f393c348346afff676d24ed7d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7212894050716318238}
   m_SourcePrefab: {fileID: 100100000, guid: c70eb9f393c348346afff676d24ed7d4, type: 3}
+--- !u!114 &7212894050716318238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039641679234185977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a174a30e34d05354cbebc34ddbcdad15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
+  gameManager: {fileID: 0}

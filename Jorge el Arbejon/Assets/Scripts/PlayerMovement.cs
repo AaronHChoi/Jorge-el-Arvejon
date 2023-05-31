@@ -8,9 +8,15 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontal;
 
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer; 
+    [SerializeField] private Rigidbody2D rb;
+
+    // movimiento lateral
     [SerializeField] private const float walkSpeed = 10f;
     private const float runSpeed = walkSpeed * 1.5f;
     private float moveSpeed = walkSpeed;
+    // movimiento vertical
 
     [SerializeField] private float jumpingPower = 15f;
     private bool isFacingRight = true;
@@ -21,11 +27,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
 
+    // dash
+    [SerializeField] private TrailRenderer tr;
+
     private bool canDash = true;
     private bool isDashing;
     [SerializeField] private float dashingPower = 24f;
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
+
+    // wall slide   y wall jump
+
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask wallLayer;
 
     private bool isWallSliding;
     [SerializeField] private float wallSlidingSpeed = 2f;
@@ -37,77 +51,76 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Vector2 wallJumpingPower = new Vector2(2f, 15f);
     
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private TrailRenderer tr;
-    [SerializeField] private Transform wallCheck;
-    [SerializeField] private LayerMask wallLayer;
 
     private enum MovementState { idle, running, jumping }
 
     // Update is called once per frame
     void Update()
     {
-        if (isDashing)
+        if (!PauseMenu.isPaused)
         {
-            return;
+
+            if (isDashing)
+            {
+                return;
+            }
+
+            horizontal = Input.GetAxisRaw("Horizontal");
+
+
+            if (IsGrounded())
+            {
+                coyoteTimeCounter = coyoteTime;
+
+            }
+            else
+            {
+                coyoteTimeCounter -= Time.deltaTime;
+            }
+
+            if (Input.GetButton("Jump"))
+            {
+                jumpBufferCounter = jumpBufferTime;
+            }
+            else
+            {
+                jumpBufferCounter -= Time.deltaTime;
+            }
+
+            if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+
+                jumpBufferCounter = 0f;
+            }
+
+            if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+
+                coyoteTimeCounter = 0f;
+
+            }
+
+            WallSlide();
+
+            WallJump();
+
+            if (!isWallJumping)
+            {
+                Flip();
+            }
+
+            Run();
+
+            if (Input.GetKey(KeyCode.LeftControl) && canDash)
+            {
+                StartCoroutine(Dash());
+            }
+
+            UpdateAnimationState();
+
         }
-
-        horizontal = Input.GetAxisRaw("Horizontal");
-
-
-        if (IsGrounded())
-        {
-            coyoteTimeCounter = coyoteTime;
-
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.deltaTime;
-        }
-
-        if (Input.GetButton("Jump"))
-        {
-            jumpBufferCounter = jumpBufferTime;
-        }
-        else
-        {
-            jumpBufferCounter -= Time.deltaTime;   
-        }
-
-        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-
-            jumpBufferCounter = 0f;
-        }
-
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-
-            coyoteTimeCounter = 0f;
-
-        }
-
-        WallSlide();
-
-        WallJump();
-
-        if (!isWallJumping)
-        {
-            Flip();
-        }
-
-        Run();
-
-        if (Input.GetKey(KeyCode.LeftControl) && canDash)
-        {
-            StartCoroutine(Dash());
-        }
-
-        UpdateAnimationState();
 
     }
 
@@ -149,6 +162,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    // ACA
     private void WallJump()
     {
         if (isWallSliding)
@@ -165,18 +180,21 @@ public class PlayerMovement : MonoBehaviour
             wallJumpingCounter -= Time.deltaTime;
         }
 
+        // aca fix wall jump por ahora esta bien pero no hace bien el wall jump para la derecha hay que cambiar el codigo que deje de usar
+        // scale x y usar rotate 180
+
         if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
         {
             isWallJumping = true;
+
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+
             wallJumpingCounter = 0f;
 
             if (transform.localScale.x != wallJumpingDirection)
             {
                 isFacingRight = !isFacingRight;
-                Vector3 localScale = transform.localScale;
-                localScale.x *= -1f;
-                transform.localScale = localScale;
+                transform.Rotate(0f, 180f, 0f);
             }
 
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
@@ -193,9 +211,10 @@ public class PlayerMovement : MonoBehaviour
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight =  !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+
+
+
+            transform.Rotate(0f, 180f, 0f);
             
         }
     }
@@ -213,6 +232,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    // aca cambiar que la direccion del dash valla por la direccion de que esta dando el pj y no por scale x
     private IEnumerator Dash()
     {
             canDash = false;

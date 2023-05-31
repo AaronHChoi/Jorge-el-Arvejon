@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3715060774573589714}
   - component: {fileID: 1615960714783300457}
   - component: {fileID: 2578343869729068350}
-  - component: {fileID: 3950124977500338351}
   - component: {fileID: 5047366364600166664}
   m_Layer: 0
   m_Name: Jorge el Arbejon
@@ -119,7 +118,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &7055993129189736138
 CircleCollider2D:
@@ -169,26 +168,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2578343869729068350}
-  jumpingPower: 15
-  coyoteTime: 0.2
-  jumpBufferTime: 0.2
-  dashingPower: 30
-  dashingTime: 0.2
-  dashingCooldown: 1
-  wallSlidingSpeed: 2
-  wallJumpingTime: 0.2
-  wallJumpingDuration: 0.1
-  wallJumpingPower: {x: 10, y: 15}
-  rb: {fileID: 7990092339054664838}
   groundCheck: {fileID: 7684455168040656203}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  rb: {fileID: 7990092339054664838}
+  jumpingPower: 15
+  coyoteTime: 0.2
+  jumpBufferTime: 0.2
   tr: {fileID: 1615960714783300457}
+  dashingPower: 30
+  dashingTime: 0.2
+  dashingCooldown: 1
   wallCheck: {fileID: 8178395699948047358}
   wallLayer:
     serializedVersion: 2
     m_Bits: 512
+  wallSlidingSpeed: 2
+  wallJumpingTime: 0.2
+  wallJumpingDuration: 0.1
+  wallJumpingPower: {x: 10, y: 15}
 --- !u!96 &1615960714783300457
 TrailRenderer:
   serializedVersion: 3
@@ -323,19 +322,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3950124977500338351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391894208857442496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5510d33dcbfd7e49b66c2ff774889ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootText: {fileID: 0}
 --- !u!114 &5047366364600166664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,9 +334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631045f578758754b8152181e48bc302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 0.2
   firepoint: {fileID: 2699692500146629665}
-  bullets: {fileID: 0}
+  bulletPrefab: {fileID: 3826298364118425172, guid: e924b1ef3e8c0084aaf061f5662c430b, type: 3}
+  firerate: 0.2
 --- !u!1 &3402551534975693659
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3402551534975693659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.51, y: -0.09, z: 0}
+  m_LocalPosition: {x: 0.8, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -406,7 +392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8500269154167455386}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.022, y: -0.443, z: 0.16249391}
+  m_LocalPosition: {x: 0.03, y: -0.423, z: 0.16249391}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -437,7 +423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9001942054267306354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.418, y: -0.061, z: -0.4446302}
+  m_LocalPosition: {x: 0.384, y: -0.07, z: -0.4446302}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

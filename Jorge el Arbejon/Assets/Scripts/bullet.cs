@@ -4,45 +4,25 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    private float direction;
-    private bool hit;
-    private float lifetime;
+    public float speed = 50f;
+    public Rigidbody2D rb;
+    public int damage = 20;
 
     // Start is called before the first frame update
-    private void Update()
+    void Start()
     {
-        
-
-        float movementSpeed = speed * Time.deltaTime * direction;
-
-        transform.Translate(movementSpeed, 0 , 0);
-
-        lifetime += Time.deltaTime;
-        if (lifetime > 5) gameObject.SetActive(false);
-
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = transform.right * speed;
     }
 
-    public void SetDirection(float _direction)
+    void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
 
-        lifetime = 0;
-
-        direction = _direction;
-
-        gameObject.SetActive(true);
-
-        hit = false;
-
-
-
-        float localScaleX = transform.localScale.x;
-
-        if(Mathf.Sign(localScaleX) != _direction)
-            localScaleX = -localScaleX;
-
-        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+        Destroy(gameObject);
     }
-
-
 }
