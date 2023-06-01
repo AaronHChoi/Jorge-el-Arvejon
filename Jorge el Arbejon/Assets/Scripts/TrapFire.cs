@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrapFire : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
     
-        if(collision.tag == "player")
+        if(collision.tag == "Player")
         {
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         }
-
-
-
-
+        
+          
     }
 
-
 }
+
+
+
