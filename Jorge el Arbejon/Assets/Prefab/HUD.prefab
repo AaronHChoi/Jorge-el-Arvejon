@@ -197,7 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f18305c0536a7a439fe7136ecdeaa5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   points: {fileID: 5317970270983234176}
 --- !u!1 &1291005798127534206
 GameObject:
@@ -369,8 +368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45, y: -45.7788}
-  m_SizeDelta: {x: 59.9813, y: 70.7435}
+  m_AnchoredPosition: {x: 70.33209, y: -66.888916}
+  m_SizeDelta: {x: 110.6455, y: 112.9636}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7042686890780728019
 CanvasRenderer:
@@ -427,10 +426,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.3
-  m_fontSizeBase: 40
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
