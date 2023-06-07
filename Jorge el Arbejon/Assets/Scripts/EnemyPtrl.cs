@@ -14,7 +14,7 @@ public class EnemyPtrl : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentPoint = PointB.transform;
+        currentPoint = PointA.transform;
     }
 
     // Update is called once per frame
@@ -24,19 +24,24 @@ public class EnemyPtrl : MonoBehaviour
         if(currentPoint == PointB.transform)
         {
             rb.velocity = new Vector2(speed, 0);
+
         }
         else
         {
             rb.velocity = new Vector2(-speed, 0);
+
         }
-        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == PointB.transform)
+        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == PointB.transform)
         {
             currentPoint = PointA.transform;
+            transform.Rotate(0f, 180f, 0f);
         }
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == PointA.transform)
         {
             currentPoint = PointB.transform;
+            transform.Rotate(0f, 180f, 0f);
         }
+
     }
 
     private void OnDrawGizmos()

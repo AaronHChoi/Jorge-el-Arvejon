@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Animator animator;
-
-    private float horizontal;
+    private enum MovementState { idle, running, jumping, falling, slide}
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer; 
     [SerializeField] private Rigidbody2D rb;
 
     // movimiento lateral
+    private float horizontal;
+
     [SerializeField] private const float walkSpeed = 10f;
     private const float runSpeed = walkSpeed * 1.5f;
     private float moveSpeed = walkSpeed;
@@ -36,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
 
+    private float direction;
+
     // wall slide   y wall jump
 
     [SerializeField] private Transform wallCheck;
@@ -51,9 +54,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Vector2 wallJumpingPower = new Vector2(2f, 15f);
     
-
-    private enum MovementState { idle, running, jumping }
-
     // Update is called once per frame
     void Update()
     {
@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             horizontal = Input.GetAxisRaw("Horizontal");
+
 
 
             if (IsGrounded())
@@ -163,13 +164,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    // ACA
     private void WallJump()
     {
         if (isWallSliding)
         {
             isWallJumping = false;
-            wallJumpingDirection = -transform.localScale.x;
+            wallJumpingDirection = -horizontal;
             wallJumpingCounter = wallJumpingTime;
 
             CancelInvoke(nameof(StopWallJumping));
@@ -182,6 +182,7 @@ public class PlayerMovement : MonoBehaviour
 
         // aca fix wall jump por ahora esta bien pero no hace bien el wall jump para la derecha hay que cambiar el codigo que deje de usar
         // scale x y usar rotate 180
+        // se uso horizzontal
 
         if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
         {
@@ -191,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
 
             wallJumpingCounter = 0f;
 
-            if (transform.localScale.x != wallJumpingDirection)
+            if (horizontal != wallJumpingDirection)
             {
                 isFacingRight = !isFacingRight;
                 transform.Rotate(0f, 180f, 0f);
@@ -234,6 +235,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     // aca cambiar que la direccion del dash valla por la direccion de que esta dando el pj y no por scale x
+    // se arreglo cambiando el scale con horizzontal nose porque pero esta fixed
     private IEnumerator Dash()
     {
             canDash = false;
@@ -243,7 +245,7 @@ public class PlayerMovement : MonoBehaviour
 
             rb.gravityScale = 0f;
 
-            rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+            rb.velocity = new Vector2(horizontal * dashingPower, 0f);
 
             tr.emitting = true;
 
@@ -283,7 +285,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (rb.velocity.y < -0.1f)
         {
-            state = MovementState.jumping;
+            state = MovementState.falling;
         }
 
         animator.SetInteger("state", (int)state);
