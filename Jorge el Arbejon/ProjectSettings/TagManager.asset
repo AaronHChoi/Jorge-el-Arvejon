@@ -50,3 +50,6 @@ TagManager:
   - name: Traps
     uniqueID: 170513107
     locked: 0
+  - name: SpeechBubbles
+    uniqueID: 3180683959
+    locked: 0
