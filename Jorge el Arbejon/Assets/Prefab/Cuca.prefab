@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 5436259229625644063}
   - component: {fileID: 4485623599228510489}
   - component: {fileID: 2108874284370388464}
+  - component: {fileID: 8369832097610892180}
   m_Layer: 0
   m_Name: cuca head
   m_TagString: weak point
@@ -254,6 +255,20 @@ MonoBehaviour:
   PointA: {fileID: 4561293309147211162}
   PointB: {fileID: 8057178826526976243}
   speed: 3
+--- !u!114 &8369832097610892180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2227867940308873603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc61178e1afb354cb4903a0067af63f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  currentHealth: 1
 --- !u!1 &4561293309147211162
 GameObject:
   m_ObjectHideFlags: 0
