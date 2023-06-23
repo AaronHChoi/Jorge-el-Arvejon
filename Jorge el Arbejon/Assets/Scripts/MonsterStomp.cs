@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MonsterStomp : MonoBehaviour
 {
-
-    public PlayerMovement playerMovement;
     public Rigidbody2D rb;
     public float bounceForce = 20f;
 

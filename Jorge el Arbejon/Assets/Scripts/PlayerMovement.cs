@@ -53,14 +53,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallJumpingDuration = 0.1f;
 
     [SerializeField] private Vector2 wallJumpingPower = new Vector2(2f, 15f);
-
-    // knockback settings
-
-    public float KBforce;
-    public float KBcounter;
-    public float KBtotaltime;
-
-    public bool KBfromRight;
     
     // Update is called once per frame
     void Update()
@@ -139,23 +131,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (KBcounter <= 0)
-        {
-            horizontal = Input.GetAxisRaw("Horizontal");
-        }
-        else
-        {
-            if (KBfromRight == true)
-            {
-                rb.velocity = new Vector2(-KBforce, KBforce);
-            }
-            if (KBfromRight == false)
-            {
-                rb.velocity = new Vector2(KBforce, KBforce);
-            }
 
-            KBcounter -= Time.deltaTime;
-        }
+        horizontal = Input.GetAxisRaw("Horizontal");
 
         if (isDashing)
         {
