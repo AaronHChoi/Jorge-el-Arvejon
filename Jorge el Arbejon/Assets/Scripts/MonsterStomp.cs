@@ -6,21 +6,14 @@ public class MonsterStomp : MonoBehaviour
 {
 
     public PlayerMovement playerMovement;
+    public Rigidbody2D rb;
+    public float bounceForce = 20f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag=="weak point")
         {
-            playerMovement.KBcounter = playerMovement.KBtotaltime;
-
-            if (collision.transform.position.x <= transform.position.x)
-            {
-                playerMovement.KBfromRight = true;
-            }
-            if (collision.transform.position.x > transform.position.x)
-            {
-                playerMovement.KBfromRight = false;
-            }
+            rb.velocity = new Vector2(bounceForce, bounceForce);
 
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(1);
 
