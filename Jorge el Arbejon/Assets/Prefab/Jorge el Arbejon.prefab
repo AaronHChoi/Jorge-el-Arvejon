@@ -190,6 +190,10 @@ MonoBehaviour:
   wallJumpingTime: 0.2
   wallJumpingDuration: 0.1
   wallJumpingPower: {x: 10, y: 15}
+  KBforce: 10
+  KBcounter: 0.2
+  KBtotaltime: 0
+  KBfromRight: 0
 --- !u!96 &1615960714783300457
 TrailRenderer:
   serializedVersion: 3
