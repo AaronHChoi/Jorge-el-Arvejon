@@ -166,7 +166,7 @@ MonoBehaviour:
   - Eh.
   nPCDialogueSentences:
   - Suerte pibe.
-  - No sabes lo que pasa aca?
+  - "\xBFNo sabes lo que pasa ac\xE1?"
   - Bueh tomatela... Ya te vas a enterar.
 --- !u!4 &350325901
 Transform:
