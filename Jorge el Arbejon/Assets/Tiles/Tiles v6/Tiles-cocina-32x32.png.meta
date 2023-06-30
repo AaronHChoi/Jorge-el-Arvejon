@@ -341,8 +341,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_11
       rect:
         serializedVersion: 2
-        x: 1
-        y: 101
+        x: 166
+        y: 134
         width: 32
         height: 32
       alignment: 0
@@ -362,7 +362,7 @@ TextureImporter:
       name: Tiles-cocina-32x32_12
       rect:
         serializedVersion: 2
-        x: 34
+        x: 1
         y: 101
         width: 32
         height: 32
@@ -383,7 +383,7 @@ TextureImporter:
       name: Tiles-cocina-32x32_13
       rect:
         serializedVersion: 2
-        x: 67
+        x: 34
         y: 101
         width: 32
         height: 32
@@ -404,7 +404,7 @@ TextureImporter:
       name: Tiles-cocina-32x32_14
       rect:
         serializedVersion: 2
-        x: 100
+        x: 67
         y: 101
         width: 32
         height: 32
@@ -425,7 +425,7 @@ TextureImporter:
       name: Tiles-cocina-32x32_15
       rect:
         serializedVersion: 2
-        x: 133
+        x: 100
         y: 101
         width: 32
         height: 32
@@ -446,8 +446,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_16
       rect:
         serializedVersion: 2
-        x: 1
-        y: 67
+        x: 133
+        y: 101
         width: 32
         height: 32
       alignment: 0
@@ -467,8 +467,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_17
       rect:
         serializedVersion: 2
-        x: 34
-        y: 67
+        x: 166
+        y: 101
         width: 32
         height: 32
       alignment: 0
@@ -488,7 +488,7 @@ TextureImporter:
       name: Tiles-cocina-32x32_18
       rect:
         serializedVersion: 2
-        x: 67
+        x: 1
         y: 67
         width: 32
         height: 32
@@ -509,8 +509,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_19
       rect:
         serializedVersion: 2
-        x: 100
-        y: 68
+        x: 34
+        y: 67
         width: 32
         height: 32
       alignment: 0
@@ -530,8 +530,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_20
       rect:
         serializedVersion: 2
-        x: 133
-        y: 68
+        x: 67
+        y: 67
         width: 32
         height: 32
       alignment: 0
@@ -551,8 +551,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_21
       rect:
         serializedVersion: 2
-        x: 1
-        y: 34
+        x: 100
+        y: 68
         width: 32
         height: 32
       alignment: 0
@@ -572,8 +572,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_22
       rect:
         serializedVersion: 2
-        x: 34
-        y: 34
+        x: 133
+        y: 68
         width: 32
         height: 32
       alignment: 0
@@ -593,8 +593,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_23
       rect:
         serializedVersion: 2
-        x: 67
-        y: 34
+        x: 166
+        y: 68
         width: 32
         height: 32
       alignment: 0
@@ -614,8 +614,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_24
       rect:
         serializedVersion: 2
-        x: 100
-        y: 35
+        x: 1
+        y: 34
         width: 32
         height: 32
       alignment: 0
@@ -635,8 +635,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_25
       rect:
         serializedVersion: 2
-        x: 133
-        y: 35
+        x: 34
+        y: 34
         width: 32
         height: 32
       alignment: 0
@@ -656,8 +656,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_26
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
+        x: 67
+        y: 34
         width: 32
         height: 32
       alignment: 0
@@ -677,8 +677,8 @@ TextureImporter:
       name: Tiles-cocina-32x32_27
       rect:
         serializedVersion: 2
-        x: 34
-        y: 1
+        x: 100
+        y: 35
         width: 32
         height: 32
       alignment: 0
@@ -690,6 +690,153 @@ TextureImporter:
       bones: []
       spriteID: 59bf38c553eb7ca4c8e620f87d1d5e47
       internalID: -273791825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles-cocina-32x32_28
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 35
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7831571bab89ddd43a888707cdf8f6d6
+      internalID: -1522334934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles-cocina-32x32_29
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 35
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e188a48cd5d984499f8c79a80c1096b
+      internalID: -365507640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles-cocina-32x32_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd5130c1ba3f8047acb847ddcc2d136
+      internalID: 1518683765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles-cocina-32x32_31
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7513eb6fac2968246a9cd1fe570df91f
+      internalID: 1728974074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles-cocina-32x32_32
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cea08468be2d44d818f6dd7bc9c1d3
+      internalID: 1564601795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles-cocina-32x32_33
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc725ec5dcdbe574a894c3c9f1041044
+      internalID: 1089767379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles-cocina-32x32_34
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981fa365d33b7cb4c87f6baef1e76601
+      internalID: -808975413
       vertices: []
       indices: 
       edges: []
@@ -726,7 +873,14 @@ TextureImporter:
       Tiles-cocina-32x32_25: 1772869408
       Tiles-cocina-32x32_26: -1581509964
       Tiles-cocina-32x32_27: -273791825
+      Tiles-cocina-32x32_28: -1522334934
+      Tiles-cocina-32x32_29: -365507640
       Tiles-cocina-32x32_3: 1430625586
+      Tiles-cocina-32x32_30: 1518683765
+      Tiles-cocina-32x32_31: 1728974074
+      Tiles-cocina-32x32_32: 1564601795
+      Tiles-cocina-32x32_33: 1089767379
+      Tiles-cocina-32x32_34: -808975413
       Tiles-cocina-32x32_4: -79026098
       Tiles-cocina-32x32_5: 1691081761
       Tiles-cocina-32x32_6: 1710755845
