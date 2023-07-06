@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour
     private int playerIndex;
     private int nPCIndex;
 
-    private float speechBubbleAnimationDelay = 0.6f;
+    private float speechBubbleAnimationDelay = 0.5f;
 
 
     private void Start()

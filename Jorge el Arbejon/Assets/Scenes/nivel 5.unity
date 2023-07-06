@@ -4915,6 +4915,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6139937420755385872, guid: 324eeb984658e2c4288cef04e4f8e391, type: 3}
+      propertyPath: m_fontSize
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139937420755385872, guid: 324eeb984658e2c4288cef04e4f8e391, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7633284639649907891, guid: 324eeb984658e2c4288cef04e4f8e391, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.231
@@ -5049,23 +5057,54 @@ PrefabInstance:
       objectReference: {fileID: 1563882826}
     - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
       propertyPath: nPCDialogueSentences.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
       propertyPath: nPCDialogueSentences.Array.data[0]
-      value: Veni para aca
+      value: "Volve por donde viniste, ac\xE1 no pasa nadie."
       objectReference: {fileID: 0}
     - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
       propertyPath: nPCDialogueSentences.Array.data[1]
-      value: Veni para aca
+      value: 'Bueno vos te la buscaste. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
+      propertyPath: nPCDialogueSentences.Array.data[2]
+      value: "Vi que te aliaste con esa banana as\xED que ahora van a sufrir el mismo
+        destino.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
+      propertyPath: nPCDialogueSentences.Array.data[3]
+      value: "As\xED que arranca a correr porque te voy a matar \xA1PREP\xC1RATE!\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
+      propertyPath: nPCDialogueSentences.Array.data[4]
+      value: "As\xED que arranca a correr porque te voy a matar \xA1PREP\xC1RATE!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
       propertyPath: playerDialogueSentences.Array.size
-      value: 2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
+      propertyPath: playerDialogueSentences.Array.data[0]
+      value: No quiero.
       objectReference: {fileID: 0}
     - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
       propertyPath: playerDialogueSentences.Array.data[1]
-      value: "\xA1\xBFEh?!"
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
+      propertyPath: playerDialogueSentences.Array.data[2]
+      value: '...
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
+      propertyPath: playerDialogueSentences.Array.data[3]
+      value: "\xA1M\xE1s vale que est\xE9 preparado! \r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
+      propertyPath: playerDialogueSentences.Array.data[4]
+      value: "\xA1M\xE1s vale que est\xE9 preparado! \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 3818350443253207710, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
       propertyPath: m_RootOrder
@@ -5363,6 +5402,18 @@ PrefabInstance:
     - target: {fileID: 391894208857442496, guid: cfb45ec69a49496468406e676a6d06d6, type: 3}
       propertyPath: m_Name
       value: Jorge el Arbejon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817698753900522503, guid: cfb45ec69a49496468406e676a6d06d6, type: 3}
+      propertyPath: m_fontSize
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817698753900522503, guid: cfb45ec69a49496468406e676a6d06d6, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817698753900522503, guid: cfb45ec69a49496468406e676a6d06d6, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5721969824003509440, guid: cfb45ec69a49496468406e676a6d06d6, type: 3}
       propertyPath: m_RootOrder

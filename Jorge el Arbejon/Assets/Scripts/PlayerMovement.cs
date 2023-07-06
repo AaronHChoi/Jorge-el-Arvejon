@@ -53,7 +53,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallJumpingDuration = 0.1f;
 
     [SerializeField] private Vector2 wallJumpingPower = new Vector2(2f, 15f);
-    
+
+
+    [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource dashSoundEffect;
+
     // Update is called once per frame
     void Update()
     {
@@ -87,6 +91,8 @@ public class PlayerMovement : MonoBehaviour
 
             if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
             {
+                jumpSoundEffect.Play();
+
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
 
                 jumpBufferCounter = 0f;
@@ -94,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
             {
+
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
 
                 coyoteTimeCounter = 0f;
@@ -113,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftControl) && canDash)
             {
+                dashSoundEffect.Play();
                 StartCoroutine(Dash());
             }
 
