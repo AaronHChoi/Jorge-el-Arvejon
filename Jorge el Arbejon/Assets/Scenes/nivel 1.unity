@@ -8882,10 +8882,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collectibles
       objectReference: {fileID: 0}
-    - target: {fileID: 830379808866801927, guid: 0e949bac8a0a12b4f9fa7f49189306ef, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5451462961242951756, guid: 0e949bac8a0a12b4f9fa7f49189306ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46.16
