@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveObject : MonoBehaviour
 {
@@ -33,16 +34,26 @@ public class MoveObject : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.tag == "Player")
+        {
+            currentTime = 0;
+        }
+
+    }
+
     void MoveGameObject()
     {
 
             if (transform.position == NextPos.position)
             {
                 NextPosIndex++;
-                if (NextPosIndex >= Position.Length)
-                {
-                    NextPosIndex = 0;
-                }
+                //if (NextPosIndex >= Position.Length)
+                //{
+                //    NextPosIndex = 0;
+                //}
                 NextPos = Position[NextPosIndex];
             }
             else
