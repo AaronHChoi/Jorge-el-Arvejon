@@ -11,32 +11,43 @@ public class MoveObject : MonoBehaviour
 
     int NextPosIndex;
 
+    float currentTime = 0;
+    public float startingTime = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
+        currentTime = startingTime;
+
         NextPos = Position[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveGameObject();
+        currentTime -= 1 * Time.deltaTime;
+
+        if (currentTime <= 0)
+        {
+            MoveGameObject();
+        }
     }
 
     void MoveGameObject()
     {
-        if (transform.position == NextPos.position) 
-        {
-            NextPosIndex++;
-            if (NextPosIndex >= Position.Length) 
+
+            if (transform.position == NextPos.position)
             {
-                NextPosIndex = 0;
+                NextPosIndex++;
+                if (NextPosIndex >= Position.Length)
+                {
+                    NextPosIndex = 0;
+                }
+                NextPos = Position[NextPosIndex];
             }
-            NextPos = Position[NextPosIndex];
-        }
-        else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, NextPos.position, ObjectSpeed * Time.deltaTime);
-        }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, NextPos.position, ObjectSpeed * Time.deltaTime);
+            }
     }
 }
