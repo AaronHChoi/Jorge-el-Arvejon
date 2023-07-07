@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallingTrap : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
+    Rigidbody2D rb;
     public Collider2D Collider;
     void Start()
     {
