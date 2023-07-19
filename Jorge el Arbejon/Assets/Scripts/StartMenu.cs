@@ -17,7 +17,7 @@ public class StartMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Start Screen");
+        SceneManager.LoadScene("StartScreen");
     }
 
     public void Quit()
