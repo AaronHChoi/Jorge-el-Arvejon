@@ -9,6 +9,8 @@ public class AIchase : MonoBehaviour
 
     private float distance;
 
+    Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,23 @@ public class AIchase : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        }
+
+        Flip();
+    }
+
+
+    private void Flip()
+    {
+
+        if (transform.position.x > player.transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0,0,0);
+
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0,180,0);
         }
     }
 }
