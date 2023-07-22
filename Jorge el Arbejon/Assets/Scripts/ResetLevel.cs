@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class ResetLevel : MonoBehaviour
 {
     [SerializeField] private AudioSource deathSoundEffect;
-    // Start is called before the first frame update
+
+    [SerializeField] Animator transitionAnim;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("trap"))

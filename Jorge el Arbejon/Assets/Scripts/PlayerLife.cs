@@ -4,17 +4,29 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
-
+    private Animator anim;
     private Rigidbody2D rb;
+
+    [SerializeField] private AudioSource deathSoundEffect;
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
+
         rb = GetComponent<Rigidbody2D>();
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Trap"))
+        if (collision.gameObject.CompareTag("trap"))
+        {
+            Die();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("trap"))
         {
             Die();
         }
@@ -22,11 +34,15 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
+        deathSoundEffect.Play();
+
+        anim.SetTrigger("Death");
+
         rb.bodyType = RigidbodyType2D.Static;
     }
 
-    private void RestartLevel()
+    private void LevelRestart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager.Instance.RestartLevel();
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - Loot
   - trap
   - weak point
+  - GameMusic
   layers:
   - Default
   - TransparentFX

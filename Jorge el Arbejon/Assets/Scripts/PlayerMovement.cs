@@ -69,43 +69,7 @@ public class PlayerMovement : MonoBehaviour
                 return;
             }
 
-
-            if (IsGrounded())
-            {
-                coyoteTimeCounter = coyoteTime;
-
-            }
-            else
-            {
-                coyoteTimeCounter -= Time.deltaTime;
-            }
-
-            if (Input.GetButton("Jump"))
-            {
-                jumpBufferCounter = jumpBufferTime;
-            }
-            else
-            {
-                jumpBufferCounter -= Time.deltaTime;
-            }
-
-            if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
-            {
-                jumpSoundEffect.Play();
-
-                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-
-                jumpBufferCounter = 0f;
-            }
-
-            if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-            {
-
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-
-                coyoteTimeCounter = 0f;
-
-            }
+            Jump();
 
             WallSlide();
 
@@ -158,6 +122,51 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
+    private void Jump()
+    {
+
+        if (IsGrounded())
+        {
+            coyoteTimeCounter = coyoteTime;
+
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButton("Jump"))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
+        {
+
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+
+            jumpBufferCounter = 0f;
+        }
+
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        {
+
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+
+            coyoteTimeCounter = 0f;
+
+        }
+
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            jumpSoundEffect.Play();
+        }
+    }
+
     private void WallSlide()
     {
         if (IsWalled() && !IsGrounded() && horizontal != 0f)
@@ -204,6 +213,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 isFacingRight = !isFacingRight;
                 transform.Rotate(0f, 180f, 0f);
+
+                jumpSoundEffect.Play();
             }
 
             Invoke(nameof(StopWallJumping), wallJumpingDuration);

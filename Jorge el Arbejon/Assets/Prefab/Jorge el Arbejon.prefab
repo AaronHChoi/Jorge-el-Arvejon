@@ -15,10 +15,10 @@ GameObject:
   - component: {fileID: 3715060774573589714}
   - component: {fileID: 1615960714783300457}
   - component: {fileID: 2578343869729068350}
-  - component: {fileID: 1281993330279600049}
   - component: {fileID: 3160240808339133379}
   - component: {fileID: 2427286835119728644}
   - component: {fileID: 2932382594867964488}
+  - component: {fileID: 1755206584006400683}
   m_Layer: 0
   m_Name: Jorge el Arbejon
   m_TagString: Player
@@ -329,19 +329,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1281993330279600049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391894208857442496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cae0831a4221634ca65659bc1fd38a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathSoundEffect: {fileID: 2427286835119728644}
 --- !u!82 &3160240808339133379
 AudioSource:
   m_ObjectHideFlags: 0
@@ -354,7 +341,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b63fdd41929f1214788055badbc374f9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.34
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -630,6 +617,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1755206584006400683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391894208857442496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a485a29becbbf3c4e837c721e26953e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathSoundEffect: {fileID: 2427286835119728644}
 --- !u!1 &983563358812218539
 GameObject:
   m_ObjectHideFlags: 0
