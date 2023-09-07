@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,7 +105,742 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 167
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5717bebe6d5755749b17bf32eef005c7
+      internalID: 554085812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 167
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ffa4dcac5effd47afe4dc8e37120c6
+      internalID: -589636670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 167
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5330000bd0ec625489098e012e4bdec0
+      internalID: -394327706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 167
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acab9ed27c0db194bbd51d902e6e987d
+      internalID: 92337488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 167
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13005ca580431054e8a1f23593045ff8
+      internalID: 1048373450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 167
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ed630c12426cd44ad61fec98014e8d
+      internalID: -172386608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 134
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f37dac11aa4d294e97649ba222a4537
+      internalID: -734645601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_7
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 134
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ea57a4b150e964d86d3dfc20958889
+      internalID: 1798437762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_8
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 134
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2086cac324537458e37ea4ddea9c5f
+      internalID: 1874806031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_9
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 134
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d372cda6917ee334a82381196a11ed99
+      internalID: -2095561692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 134
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d895679c8ed7124da57e7969fe3810c
+      internalID: -1317399628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_11
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 134
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e833723378ef4b4ba8874c82bbaf421
+      internalID: 1770560372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 101
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6536f34918d33640a231bfeda3a1bdd
+      internalID: -573290773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_13
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 101
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b016d1bc56ba7b47a645e1210c936bf
+      internalID: 1666450007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_14
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 101
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88bb5612dbb8e9429d8181069a9ee1d
+      internalID: -590384801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 101
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ec9d4004e9b6646a2aa92904ee9e07
+      internalID: -759461148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_16
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 101
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7235c6209e76154a8dfba364ea27cbc
+      internalID: 449668480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_17
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 101
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7453247fb4c5bce418d13540c13bd917
+      internalID: 2103539137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 68
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bccd174d9836384589f61ab4355f27e
+      internalID: 37899732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_19
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 68
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f486e6b05edd85a4d93a98360d9ea694
+      internalID: -867953081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_20
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 68
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24fa4732fe940b40a70119fcfc11440
+      internalID: -1344056411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_21
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 68
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabc5801656c2bf4a9a458c3b6b487a7
+      internalID: 1760563230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_22
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 68
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686cdb193574dc94f97baf2bd2052c8b
+      internalID: 1522695811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_23
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 68
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c489ff7ae32a742a11f4c0468d6164
+      internalID: 2016828539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 35
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9eb5656108e16649b48d7b6d8040bcc
+      internalID: -1084049155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_25
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 35
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca06edeb08cb5042afafc3481b402e8
+      internalID: -585616092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_26
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 35
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25e0f61123f78b4db81e9faf4c0628b
+      internalID: 1176541937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_27
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 35
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d161a09867ae94b9b251afc6d19412
+      internalID: 1430387378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_28
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 35
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2393271dcd3df434cbfe21d01d832714
+      internalID: 1822781355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_29
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 35
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 595e052dc3d1c0241a98ecd3db45c09b
+      internalID: 354263285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a078cb53d87e4f44a0c6b181cdab724
+      internalID: -461146218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_31
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fda9555ab86154439995d2cb38e1e31
+      internalID: 1594539950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_32
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4403600f45308c64397f6b1505069006
+      internalID: 382866247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_33
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477f47e84d116f1458fa2311137cf327
+      internalID: 147935936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-sheet-lvl-alcantarilla_34
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1462b51fca959d41b3b768a2b97cbf6
+      internalID: 1332451738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +851,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tiles-sheet-lvl-alcantarilla_0: 554085812
+      tiles-sheet-lvl-alcantarilla_1: -589636670
+      tiles-sheet-lvl-alcantarilla_10: -1317399628
+      tiles-sheet-lvl-alcantarilla_11: 1770560372
+      tiles-sheet-lvl-alcantarilla_12: -573290773
+      tiles-sheet-lvl-alcantarilla_13: 1666450007
+      tiles-sheet-lvl-alcantarilla_14: -590384801
+      tiles-sheet-lvl-alcantarilla_15: -759461148
+      tiles-sheet-lvl-alcantarilla_16: 449668480
+      tiles-sheet-lvl-alcantarilla_17: 2103539137
+      tiles-sheet-lvl-alcantarilla_18: 37899732
+      tiles-sheet-lvl-alcantarilla_19: -867953081
+      tiles-sheet-lvl-alcantarilla_2: -394327706
+      tiles-sheet-lvl-alcantarilla_20: -1344056411
+      tiles-sheet-lvl-alcantarilla_21: 1760563230
+      tiles-sheet-lvl-alcantarilla_22: 1522695811
+      tiles-sheet-lvl-alcantarilla_23: 2016828539
+      tiles-sheet-lvl-alcantarilla_24: -1084049155
+      tiles-sheet-lvl-alcantarilla_25: -585616092
+      tiles-sheet-lvl-alcantarilla_26: 1176541937
+      tiles-sheet-lvl-alcantarilla_27: 1430387378
+      tiles-sheet-lvl-alcantarilla_28: 1822781355
+      tiles-sheet-lvl-alcantarilla_29: 354263285
+      tiles-sheet-lvl-alcantarilla_3: 92337488
+      tiles-sheet-lvl-alcantarilla_30: -461146218
+      tiles-sheet-lvl-alcantarilla_31: 1594539950
+      tiles-sheet-lvl-alcantarilla_32: 382866247
+      tiles-sheet-lvl-alcantarilla_33: 147935936
+      tiles-sheet-lvl-alcantarilla_34: 1332451738
+      tiles-sheet-lvl-alcantarilla_4: 1048373450
+      tiles-sheet-lvl-alcantarilla_5: -172386608
+      tiles-sheet-lvl-alcantarilla_6: -734645601
+      tiles-sheet-lvl-alcantarilla_7: 1798437762
+      tiles-sheet-lvl-alcantarilla_8: 1874806031
+      tiles-sheet-lvl-alcantarilla_9: -2095561692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
