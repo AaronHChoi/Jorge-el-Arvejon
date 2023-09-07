@@ -33,11 +33,9 @@ public class DialogueManager : MonoBehaviour
 
     private float speechBubbleAnimationDelay = 0.5f;
 
-    private PlayerMovement playerMovement;
 
     private void Start()
     {
-        playerMovement = FindAnyObjectByType<PlayerMovement>();
         StartCoroutine(StartDialogue());
     }
 
@@ -63,7 +61,6 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator StartDialogue()
     {
 
-        playerMovement.ToggleInteraction();
 
         if (nPCSpeakingFirst)
         {
@@ -175,7 +172,6 @@ public class DialogueManager : MonoBehaviour
 
             nPCSpeechBubbleAnimator.SetTrigger("Close");
 
-            playerMovement.ToggleInteraction();
         }
         else
         {
@@ -193,7 +189,6 @@ public class DialogueManager : MonoBehaviour
 
             playerSpeechBubbleAnimator.SetTrigger("Close");
 
-            playerMovement.ToggleInteraction();
         }
         else
         {
