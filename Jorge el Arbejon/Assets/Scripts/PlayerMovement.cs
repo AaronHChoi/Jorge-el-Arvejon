@@ -58,17 +58,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource dashSoundEffect;
 
-    //interaction speech
-
-    private bool interacting;
 
     // Update is called once per frame
     void Update()
     {
         if (!PauseMenu.isPaused)
         {
-            if (!interacting)
-            {
+            
                 if (isDashing)
                 {
                     return;
@@ -94,14 +90,8 @@ public class PlayerMovement : MonoBehaviour
                 }
 
                 UpdateAnimationState();
-            }
         }
 
-    }
-
-    public void ToggleInteraction()
-    {
-        interacting = !interacting;
     }
 
     private bool IsGrounded()
@@ -113,8 +103,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!interacting)
-        {
             horizontal = Input.GetAxisRaw("Horizontal");
 
             if (isDashing)
@@ -126,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
             }
-        }
+        
         
     }
 
