@@ -33,9 +33,11 @@ public class DialogueManager : MonoBehaviour
 
     private float speechBubbleAnimationDelay = 0.5f;
 
+    private PlayerMovement playerMovement;
 
     private void Start()
     {
+        playerMovement = FindAnyObjectByType<PlayerMovement>();
         StartCoroutine(StartDialogue());
     }
 
@@ -60,6 +62,9 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator StartDialogue()
     {
+
+        playerMovement.ToggleInteraction();
+
         if (nPCSpeakingFirst)
         {
             nPCSpeechBubbleAnimator.SetTrigger("Open");
@@ -115,9 +120,7 @@ public class DialogueManager : MonoBehaviour
 
         yield return new WaitForSeconds(speechBubbleAnimationDelay);
 
-        if(playerIndex < playerDialogueSentences.Length - 1)
-        {
-
+        
             if (dialogueStarted)
             {
                 playerIndex++;
@@ -127,9 +130,9 @@ public class DialogueManager : MonoBehaviour
                 dialogueStarted = true;
             }
 
-            playerDialogueText.text = string.Empty;
+            
             StartCoroutine(TypePlayerDialogue());
-        }
+
     }
     private IEnumerator ContinueNPCDialogue()
     {
@@ -145,8 +148,7 @@ public class DialogueManager : MonoBehaviour
 
         yield return new WaitForSeconds(speechBubbleAnimationDelay);
 
-        if (nPCIndex < nPCDialogueSentences.Length - 1)
-        {
+        
             if (dialogueStarted)
             {
                 playerIndex++;
@@ -158,9 +160,9 @@ public class DialogueManager : MonoBehaviour
 
             nPCIndex++;
 
-            nPCDialogueText.text = string.Empty;
+            
             StartCoroutine(TypeNPCDialogue());
-        }
+        
     }
 
     public void TriggerContinuePlayerDialogue()
@@ -172,6 +174,8 @@ public class DialogueManager : MonoBehaviour
             nPCDialogueText.text = string.Empty;
 
             nPCSpeechBubbleAnimator.SetTrigger("Close");
+
+            playerMovement.ToggleInteraction();
         }
         else
         {
@@ -188,6 +192,8 @@ public class DialogueManager : MonoBehaviour
             playerDialogueText.text = string.Empty;
 
             playerSpeechBubbleAnimator.SetTrigger("Close");
+
+            playerMovement.ToggleInteraction();
         }
         else
         {

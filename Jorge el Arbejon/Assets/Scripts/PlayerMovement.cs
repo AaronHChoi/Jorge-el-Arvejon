@@ -58,40 +58,50 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource dashSoundEffect;
 
+    //interaction speech
+
+    private bool interacting;
+
     // Update is called once per frame
     void Update()
     {
         if (!PauseMenu.isPaused)
         {
-
-            if (isDashing)
+            if (!interacting)
             {
-                return;
+                if (isDashing)
+                {
+                    return;
+                }
+
+                Jump();
+
+                WallSlide();
+
+                WallJump();
+
+                if (!isWallJumping)
+                {
+                    Flip();
+                }
+
+                Run();
+
+                if (Input.GetKey(KeyCode.LeftControl) && canDash)
+                {
+                    dashSoundEffect.Play();
+                    StartCoroutine(Dash());
+                }
+
+                UpdateAnimationState();
             }
-
-            Jump();
-
-            WallSlide();
-
-            WallJump();
-
-            if (!isWallJumping)
-            {
-                Flip();
-            }
-
-            Run();
-
-            if (Input.GetKey(KeyCode.LeftControl) && canDash)
-            {
-                dashSoundEffect.Play();
-                StartCoroutine(Dash());
-            }
-
-            UpdateAnimationState();
-
         }
 
+    }
+
+    public void ToggleInteraction()
+    {
+        interacting = !interacting;
     }
 
     private bool IsGrounded()
@@ -103,18 +113,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        horizontal = Input.GetAxisRaw("Horizontal");
-
-        if (isDashing)
+        if (!interacting)
         {
-            return;
-        }
+            horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (!isWallJumping)
-        {
-            rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+            if (isDashing)
+            {
+                return;
+            }
+
+            if (!isWallJumping)
+            {
+                rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+            }
         }
+        
     }
 
     private bool IsWalled()
