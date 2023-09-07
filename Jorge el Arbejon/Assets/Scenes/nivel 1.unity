@@ -653,17 +653,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 420509099225076364, guid: d3c81c5ae8c01644fa17d05cec172ade, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 460825555773792440, guid: d3c81c5ae8c01644fa17d05cec172ade, type: 3}
       propertyPath: m_Name
       value: HUD
-      objectReference: {fileID: 0}
-    - target: {fileID: 460825555773792440, guid: d3c81c5ae8c01644fa17d05cec172ade, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42590,6 +42582,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
+      propertyPath: typingSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421823420285310169, guid: e7b94a96601e2dc48b383438ed61f5f1, type: 3}
       propertyPath: nPCDialogueText
       value: 
       objectReference: {fileID: 510674649}
@@ -42763,10 +42759,6 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 521729162}
-    - target: {fileID: 5323881820307082417, guid: f06ac442878b94948b63c8496effde19, type: 3}
-      propertyPath: m_Damping
-      value: 5.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5323881820307082417, guid: f06ac442878b94948b63c8496effde19, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
