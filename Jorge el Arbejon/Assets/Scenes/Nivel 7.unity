@@ -49942,6 +49942,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1965378121}
+    - target: {fileID: 5352505634331175879, guid: f06ac442878b94948b63c8496effde19, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 918771515a300964b9f26395eeb39bc3, type: 3}
     - target: {fileID: 5575993281301150828, guid: f06ac442878b94948b63c8496effde19, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.26656866
