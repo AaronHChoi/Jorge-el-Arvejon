@@ -1,24 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
+using System.Linq;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
     public Animator animator;
-    private enum MovementState { idle, running, jumping, falling, slide}
+    private enum MovementState { idle, running, jumping, falling, slide }
 
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer; 
+    [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Rigidbody2D rb;
 
-    // movimiento lateral
+    // Lateral movement
     private float horizontal;
 
     [SerializeField] private const float walkSpeed = 10f;
     private const float runSpeed = walkSpeed * 1.5f;
     private float moveSpeed = walkSpeed;
-    // movimiento vertical
 
+    // Vertical movement
     [SerializeField] private float jumpingPower = 15f;
     private bool isFacingRight = true;
 
@@ -28,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
 
-    // dash
+    // Dash
     [SerializeField] private TrailRenderer tr;
 
     private bool canDash = true;
@@ -39,8 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float direction;
 
-    // wall slide   y wall jump
-
+    // Wall slide and wall jump
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
 
@@ -54,68 +57,60 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Vector2 wallJumpingPower = new Vector2(2f, 15f);
 
-
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource dashSoundEffect;
+    private int dashCount = 0; // Track the total number of dashes
 
-
-    // Update is called once per frame
     void Update()
     {
         if (!PauseMenu.isPaused)
         {
-            
-                if (isDashing)
-                {
-                    return;
-                }
-
-                Jump();
-
-                WallSlide();
-
-                WallJump();
-
-                if (!isWallJumping)
-                {
-                    Flip();
-                }
-
-                Run();
-
-                if (Input.GetKey(KeyCode.LeftControl) && canDash)
-                {
-                    dashSoundEffect.Play();
-                    StartCoroutine(Dash());
-                }
-
-                UpdateAnimationState();
-        }
-
-    }
-
-    private bool IsGrounded()
-    {
-        {
-            return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-        }
-    }
-
-    private void FixedUpdate()
-    {
-            horizontal = Input.GetAxisRaw("Horizontal");
-
             if (isDashing)
             {
                 return;
             }
 
+            Jump();
+
+            WallSlide();
+
+            WallJump();
+
             if (!isWallJumping)
             {
-                rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+                Flip();
             }
-        
-        
+
+            Run();
+
+            if (Input.GetKey(KeyCode.LeftControl) && canDash)
+            {
+                dashSoundEffect.Play();
+                StartCoroutine(Dash());
+            }
+
+            UpdateAnimationState();
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    private void FixedUpdate()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (isDashing)
+        {
+            return;
+        }
+
+        if (!isWallJumping)
+        {
+            rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
+        }
     }
 
     private bool IsWalled()
@@ -123,50 +118,91 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
+    private int jumpCount = 0; // Track how many times the player has jumped
+
     private void Jump()
     {
-
-        if (IsGrounded())
-        {
-            coyoteTimeCounter = coyoteTime;
-
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.deltaTime;
-        }
-
-        if (Input.GetButton("Jump"))
-        {
-            jumpBufferCounter = jumpBufferTime;
-        }
-        else
-        {
-            jumpBufferCounter -= Time.deltaTime;
-        }
-
-        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
-        {
-
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-
-            jumpBufferCounter = 0f;
-        }
-
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        {
-
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-
-            coyoteTimeCounter = 0f;
-
-        }
-
+        // Check if the player pressed the jump button and is grounded
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpSoundEffect.Play();
+
+            // Increment the jump count
+            jumpCount++;
+
+            // Send a custom analytics event
+            SendJumpEvent();
+        }
+
+        // Handle jump release for jump height adjustment
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
     }
+
+    private async void SendJumpEvent()
+    {
+        try
+        {
+            // Ensure Unity Services are initialized
+            if (UnityServices.State != ServicesInitializationState.Initialized)
+            {
+                await UnityServices.InitializeAsync();
+                Debug.Log("Unity Services Initialized Successfully");
+            }
+
+            // Create and configure the custom event
+            PlayerJumpEvent playerJumpEvent = new PlayerJumpEvent
+            {
+                JumpCount = jumpCount // Pass the jump count
+            };
+
+            // Record the custom event
+            AnalyticsService.Instance.RecordEvent(playerJumpEvent);
+
+            Debug.Log($"PlayerJump event recorded successfully with jumpCount: {jumpCount}");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Error while recording PlayerJump event: {e.Message}");
+        }
+    }
+
+
+    private async void SendDashEvent()
+    {
+        try
+        {
+            // Ensure Unity Services are initialized
+            if (UnityServices.State != ServicesInitializationState.Initialized)
+            {
+                await UnityServices.InitializeAsync();
+                Debug.Log("Unity Services Initialized Successfully");
+            }
+
+            // Create and configure the PlayerDashEvent
+            PlayerDashEvent playerDashEvent = new PlayerDashEvent
+            {
+                DashCount = dashCount // Pass the dash count
+            };
+
+            // Record the PlayerDash event
+            AnalyticsService.Instance.RecordEvent(playerDashEvent);
+
+            Debug.Log($"PlayerDash event recorded successfully with DashCount: {dashCount}");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error while recording PlayerDash event: {e.Message}");
+        }
+    }
+
+
+
+
+
 
     private void WallSlide()
     {
@@ -181,7 +217,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private void WallJump()
     {
         if (isWallSliding)
@@ -192,15 +227,10 @@ public class PlayerMovement : MonoBehaviour
 
             CancelInvoke(nameof(StopWallJumping));
         }
-
         else
         {
             wallJumpingCounter -= Time.deltaTime;
         }
-
-        // aca fix wall jump por ahora esta bien pero no hace bien el wall jump para la derecha hay que cambiar el codigo que deje de usar
-        // scale x y usar rotate 180
-        // se uso horizzontal
 
         if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
         {
@@ -231,56 +261,49 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
-            isFacingRight =  !isFacingRight;
-
-
-
+            isFacingRight = !isFacingRight;
             transform.Rotate(0f, 180f, 0f);
-            
         }
     }
 
     private void Run()
     {
-        if (Input.GetKey (KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             moveSpeed = runSpeed;
         }
-
         else
         {
             moveSpeed = walkSpeed;
         }
     }
 
-
-    // aca cambiar que la direccion del dash valla por la direccion de que esta dando el pj y no por scale x
-    // se arreglo cambiando el scale con horizzontal nose porque pero esta fixed
     private IEnumerator Dash()
     {
+        if (canDash)
+        {
             canDash = false;
+            dashCount++; // Increment the dash counter
+            SendDashEvent(); // Record the dash event
+
             isDashing = true;
-
             float originalGravity = rb.gravityScale;
-
             rb.gravityScale = 0f;
 
             rb.velocity = new Vector2(horizontal * dashingPower, 0f);
-
             tr.emitting = true;
 
             yield return new WaitForSeconds(dashingTime);
 
             tr.emitting = false;
-
             rb.gravityScale = originalGravity;
-
             isDashing = false;
 
             yield return new WaitForSeconds(dashingCooldown);
-
             canDash = true;
+        }
     }
+
 
     private void UpdateAnimationState()
     {
