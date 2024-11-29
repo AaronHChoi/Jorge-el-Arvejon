@@ -61,6 +61,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource dashSoundEffect;
     private int dashCount = 0; // Track the total number of dashes
 
+    // Añadimos el contador de Wall Slides
+    private int wallSlideCount = 0;
+
     void Update()
     {
         if (!PauseMenu.isPaused)
@@ -72,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
             Jump();
 
-            WallSlide();
+            WallSlide();  // Llamamos a la función de WallSlide
 
             WallJump();
 
@@ -170,7 +173,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private async void SendDashEvent()
     {
         try
@@ -199,15 +201,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-
-
-
-
     private void WallSlide()
     {
         if (IsWalled() && !IsGrounded() && horizontal != 0f)
         {
+            if (!isWallSliding)
+            {
+                wallSlideCount++; // Solo incrementamos el contador al comenzar el Wall Slide
+                SendWallSlideEvent(); // Enviamos el evento a Analytics
+            }
+
             isWallSliding = true;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
         }
@@ -216,6 +219,35 @@ public class PlayerMovement : MonoBehaviour
             isWallSliding = false;
         }
     }
+
+    // Función para enviar el evento de Wall Slide
+    private async void SendWallSlideEvent()
+    {
+        try
+        {
+            if (UnityServices.State != ServicesInitializationState.Initialized)
+            {
+                await UnityServices.InitializeAsync();
+                Debug.Log("Unity Services Initialized Successfully");
+            }
+
+            // Create and configure the event
+            PlayerWallSlideEvent playerWallSlideEvent = new PlayerWallSlideEvent
+            {
+                Wallslidecount = wallSlideCount // Use the exact parameter name
+            };
+
+            // Record the event
+            AnalyticsService.Instance.RecordEvent(playerWallSlideEvent);
+
+            Debug.Log($"PlayerWallSlide event recorded successfully with Wallslidecount: {wallSlideCount}");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error while recording PlayerWallSlide event: {e.Message}");
+        }
+    }
+
 
     private void WallJump()
     {
@@ -304,7 +336,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private void UpdateAnimationState()
     {
         MovementState state;
@@ -329,6 +360,10 @@ public class PlayerMovement : MonoBehaviour
         else if (rb.velocity.y < -0.1f)
         {
             state = MovementState.falling;
+        }
+        else if (isWallSliding)  // Verificamos si estamos en wall slide
+        {
+            state = MovementState.slide;
         }
 
         animator.SetInteger("state", (int)state);
