@@ -13,4 +13,9 @@ public class LevelStartEvent : Unity.Services.Analytics.Event
     {
         set { SetParameter("levelIndex", value); }
     }
+
+    public int LevelsInSession
+    {
+        set { SetParameter("levels_in_session", value); }
+    }
 }

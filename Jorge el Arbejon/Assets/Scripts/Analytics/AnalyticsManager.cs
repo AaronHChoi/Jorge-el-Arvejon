@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
-using UnityEditor.PackageManager;
+//using UnityEditor.PackageManager;
 using System;
 
 public class AnalyticsManager : MonoBehaviour
