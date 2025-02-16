@@ -3,6 +3,7 @@ using UnityEngine;
 using Unity.Services.Analytics;
 using UnityEngine.SceneManagement;
 using Unity.Services.Core;
+using System.Collections.Generic;
 
 public class LevelMove_Ref : MonoBehaviour
 {
@@ -22,11 +23,13 @@ public class LevelMove_Ref : MonoBehaviour
             levelsPassedInSession++;
             PlayerPrefs.SetInt("LevelsPassedInSession", levelsPassedInSession);
 
-            SendLevelStartEvent(); // Ahora este evento incluye levels_in_session
+            SendLevelStartEvent();
+            SendLevelsPassedEvent(); // Ahora usamos RecordEvent() en lugar de CustomEvent()
 
             GameManager.Instance.NextLevel();
         }
     }
+
     private async void SendLevelStartEvent()
     {
         try
@@ -39,17 +42,38 @@ public class LevelMove_Ref : MonoBehaviour
             LevelStartEvent levelStartEvent = new LevelStartEvent
             {
                 LevelName = SceneManager.GetActiveScene().name,
-                LevelIndex = SceneManager.GetActiveScene().buildIndex,
-                LevelsInSession = levelsPassedInSession // Agregamos la cantidad de niveles pasados en la sesión
+                LevelIndex = SceneManager.GetActiveScene().buildIndex
             };
 
             AnalyticsService.Instance.RecordEvent(levelStartEvent);
-
-            Debug.Log($"LevelStart event recorded successfully for level: {SceneManager.GetActiveScene().name} | Levels in session: {levelsPassedInSession}");
+            Debug.Log($"LevelStart event recorded successfully for level: {SceneManager.GetActiveScene().name}");
         }
         catch (System.Exception e)
         {
             Debug.LogError($"Error while recording LevelStart event: {e.Message}");
+        }
+    }
+
+    private async void SendLevelsPassedEvent()
+    {
+        try
+        {
+            if (UnityServices.State != ServicesInitializationState.Initialized)
+            {
+                await UnityServices.InitializeAsync();
+            }
+
+            LevelsPassedEvent levelsPassedEvent = new LevelsPassedEvent
+            {
+                TotalLevelsPassed = levelsPassedInSession 
+            };
+
+            AnalyticsService.Instance.RecordEvent(levelsPassedEvent);
+            Debug.Log($"LevelsPassedCount event recorded successfully with total_levels_passed: {levelsPassedInSession}");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Error while sending LevelsPassedCount event: {e.Message}");
         }
     }
 }

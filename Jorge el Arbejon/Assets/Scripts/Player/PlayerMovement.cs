@@ -368,14 +368,12 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetInteger("state", (int)state);
     }
-
-
     public void OnApplicationQuit()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            Debug.Log("Saliendo del juego...");
             Application.Quit ();
-            Debug.Log("Quit");
         }
     }
 }
