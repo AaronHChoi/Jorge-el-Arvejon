@@ -66,6 +66,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log("Saliendo del juego...");
+            QuitGame();
+        }
         if (!PauseMenu.isPaused)
         {
             if (isDashing)
@@ -368,12 +374,10 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetInteger("state", (int)state);
     }
-    public void OnApplicationQuit()
+    public void QuitGame()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
             Debug.Log("Saliendo del juego...");
             Application.Quit ();
-        }
+       
     }
 }

@@ -26,9 +26,10 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene("StartScreen");
     }
 
-    public void Quit()
+    public void QuitGame()
     {
         Application.Quit();
+        System.Diagnostics.Process.GetCurrentProcess().Kill();
     }
 
     private async System.Threading.Tasks.Task SendLevelStartEvent()
