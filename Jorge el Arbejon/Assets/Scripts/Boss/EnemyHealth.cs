@@ -21,9 +21,9 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= amount;
         if (currentHealth <= 0) 
-        { 
-        Destroy(gameObject);
-        
+        {
+            GameManager.Instance.EnemyKilled();
+            Destroy(gameObject);
         }
     }
 }
